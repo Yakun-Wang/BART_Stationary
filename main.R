@@ -112,11 +112,11 @@ set.seed(1010)
 L=100
 Nobs=500
 NumX=10
-#x=matrix(0,L,NumX) 
+x=matrix(0,L,NumX) 
 x[,1]=seq(1,L)/L
 x[,2]=seq(L,1)/L
 x[,3:NumX]=matrix(runif(L*(NumX-2)),L,NumX-2)
-x=matrix(runif(L*NumX),L,NumX)  # u
+#x=matrix(runif(L*NumX),L,NumX)  # u
 ts.sim=matrix(0,L,Nobs)
 x=data.frame(x)
 
