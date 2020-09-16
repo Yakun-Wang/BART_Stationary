@@ -284,6 +284,9 @@ for(j in 1:L)
   lines(spec_true[,j],col='blue')
 }
 
+### MSE
+mse=mean(apply((spec_true[1:(nfreq+1),]-aa$spec_est[1:(nfreq+1),])^2,2,mean))
+  
 #### accept ratio
 ###### acceptance ratio
 sum=0
