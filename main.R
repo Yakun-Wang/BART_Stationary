@@ -113,8 +113,12 @@ L=100
 Nobs=500
 NumX=10
 x=matrix(0,L,NumX) 
-x[,1]=seq(1,L)/L
-x[,2]=seq(L,1)/L
+for(l in 1:L)
+{
+  x[l,1]=(l-1)/(L-1)
+  x[l,2]=(l-1)/(L-1)
+}
+
 x[,3:NumX]=matrix(runif(L*(NumX-2)),L,NumX-2)
 #x=matrix(runif(L*NumX),L,NumX)  # u
 ts.sim=matrix(0,L,Nobs)
@@ -142,6 +146,7 @@ for (i in 1:L)
   x_t[,i]=x_t[,i]-xmat%*%linfit
 }
 ts.plot(x_t[,2])
+
 
 
 ##### abrupt_slowly_unordered
